@@ -28,9 +28,6 @@ func (pc ProjectConfig) Build(cfg *ConfigBuilder.Config) error {
 		// Railway
 		RailwayPort string `env:"PORT" envDefault:"3000"`
 		OnRailway   bool   `env:"ON_RAILWAY" envDefault:"false"`
-
-		// Policy
-		EngineAddress string `env:"ENGINE_ADDRESS" envDefault:"localhost:9009"`
 	}
 	p := PC{}
 
@@ -46,8 +43,6 @@ func (pc ProjectConfig) Build(cfg *ConfigBuilder.Config) error {
 	cfg.ProjectProperties["flags_agent"] = p.Flags.AgentID
 	cfg.ProjectProperties["flags_environment"] = p.Flags.EnvironmentID
 	cfg.ProjectProperties["flags_project"] = p.Flags.ProjectID
-
-	cfg.ProjectProperties["engine_address"] = p.EngineAddress
 
 	return nil
 }
