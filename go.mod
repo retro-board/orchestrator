@@ -8,6 +8,10 @@ require (
 	github.com/bugfixes/go-bugfixes v0.14.0
 	github.com/caarlos0/env/v8 v8.0.0
 	github.com/keloran/go-config v1.7.0
+	github.com/lib/pq v1.10.9
+	github.com/stretchr/testify v1.10.0
+	github.com/testcontainers/testcontainers-go v0.37.0
+	github.com/testcontainers/testcontainers-go/modules/postgres v0.37.0
 )
 
 require (
