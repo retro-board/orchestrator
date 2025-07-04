@@ -16,15 +16,7 @@ var (
 type ProjectConfig struct{}
 
 func (pc ProjectConfig) Build(cfg *ConfigBuilder.Config) error {
-	type FlagsService struct {
-		ProjectID     string `env:"FLAGS_PROJECT_ID" envDefault:"structs"`
-		AgentID       string `env:"FLAGS_AGENT_ID" envDefault:"orchestrator"`
-		EnvironmentID string `env:"FLAGS_ENVIRONMENT_ID" envDefault:"orchestrator"`
-	}
-
 	type PC struct {
-		Flags FlagsService
-
 		// Railway
 		RailwayPort string `env:"PORT" envDefault:"3000"`
 		OnRailway   bool   `env:"ON_RAILWAY" envDefault:"false"`
@@ -40,10 +32,6 @@ func (pc ProjectConfig) Build(cfg *ConfigBuilder.Config) error {
 	cfg.ProjectProperties["railway_port"] = p.RailwayPort
 	cfg.ProjectProperties["on_railway"] = p.OnRailway
 
-	cfg.ProjectProperties["flags_agent"] = p.Flags.AgentID
-	cfg.ProjectProperties["flags_environment"] = p.Flags.EnvironmentID
-	cfg.ProjectProperties["flags_project"] = p.Flags.ProjectID
-
 	return nil
 }
 
@@ -55,6 +43,7 @@ func main() {
 		ConfigBuilder.Local,
 		ConfigBuilder.Bugfixes,
 		ConfigBuilder.Postgres,
+		ConfigBuilder.Flags,
 		ConfigBuilder.WithProjectConfigurator(ProjectConfig{})); err != nil {
 		logs.Fatalf("Failed to build config: %v", err)
 	}
