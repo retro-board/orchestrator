@@ -5,7 +5,7 @@ go 1.24.0
 toolchain go1.24.3
 
 require (
-	github.com/bugfixes/go-bugfixes v0.14.0
+	github.com/bugfixes/go-bugfixes v0.14.1
 	github.com/caarlos0/env/v8 v8.0.0
 	github.com/keloran/go-config v1.7.2
 )
@@ -14,7 +14,7 @@ require (
 	github.com/Nerzal/gocloak/v13 v13.9.0 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/go-jose/go-jose/v4 v4.1.1 // indirect
-	github.com/go-logfmt/logfmt v0.6.0 // indirect
+	github.com/go-logfmt/logfmt v0.6.1 // indirect
 	github.com/go-resty/resty/v2 v2.16.5 // indirect
 	github.com/golang-jwt/jwt/v5 v5.2.2 // indirect
 	github.com/golang/snappy v1.0.0 // indirect
