@@ -5,7 +5,7 @@ go 1.24.0
 toolchain go1.24.3
 
 require (
-	github.com/bugfixes/go-bugfixes v0.14.1
+	github.com/bugfixes/go-bugfixes v0.14.2
 	github.com/caarlos0/env/v8 v8.0.0
 	github.com/keloran/go-config v1.8.0
 )
